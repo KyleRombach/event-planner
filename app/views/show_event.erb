@@ -1,0 +1,17 @@
+<h1><%= @event.name %></h1>
+<h3>Hosted by: <%= @event.creator.name %></h3>
+
+<div>
+Description: <%= @event.description %><br>
+Location: <%= @event.location %> <br>
+Start Time: <%= @event.start_time %> <br>
+End Time: <%= @event.end_time %> 
+</div>
+
+<br>
+Attendees:
+<% @event.attendees.each do |attendee| %>
+<div>
+<a href='/users/<%= attendee.id %>'><%= attendee.name %></a>
+</div>
+<% end %>

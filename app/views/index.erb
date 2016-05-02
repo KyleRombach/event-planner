@@ -1,0 +1,11 @@
+<h1>Welcome to DBC-Events!</h1>
+<a href='/sign_in'>Sign In</a><br>
+<a href='/sign_up'>Sign Up</a>
+
+
+<% @events.each do |event| %>
+<div> Event Name: <a href='/events/<%= event.id %>'><%= event.name %></a> | <%= event.start_time %> | <%= event.end_time %>  </div>
+<% end %>
+<div>
+<a href='/events/new'>Host An Event</a>
+</div>

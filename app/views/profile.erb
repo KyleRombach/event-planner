@@ -1,0 +1,25 @@
+<%if @current_user != @user %>
+Welcome to <%= @user.name %>'s profile!
+<% else %>
+Hello <%= @user.name %> Nice to see you!
+<% end %>
+
+<br> 
+
+<br>
+ Events hosting: 
+<div>
+<% @user.events.each do |event| %>
+	<a href='/events/<%= event.id %>'> <%= event.name %></a><br>
+<% end %>
+</div>
+
+<br>
+Events attending: 
+<div>
+<% @user.attending.each do |event| %>
+	<a href='/events/<%= event.id %>'> <%= event.name %></a><br>
+<% end %>
+</div>
+
+
